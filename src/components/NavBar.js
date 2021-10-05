@@ -6,8 +6,8 @@ export default function NavBar() {
   return (
     <div className="sidebar">
       <NavLink to="/">home</NavLink>
-      <NavLink>favorites</NavLink>
-      <NavLink to="/form">form</NavLink>
+      <NavLink to="/favorites">favorites</NavLink>
+      <NavLink to="/form">New Recipe</NavLink>
     </div>
   );
 }

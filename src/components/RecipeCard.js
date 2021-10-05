@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import styled from "styled-components"
+import { NavLink } from "react-router-dom";
 
-export default function RecipeCard({recipe}) {
+export default function RecipeCard({recipe, recipeSetter}) {
 
   function handleClick(){
-    console.log("Clicked!")
-    console.log(recipe)
-    
+    recipeSetter(recipe)
+    // console.log("AYY!")
   }
   // console.log(recipe)
   return (
  
-      <div onClick = {handleClick}>
+      <div>
             <CardWrapper>
       <h1> {recipe.name}</h1>
       <img src = {recipe.image} alt = {recipe.name}/>
       <p> {recipe.brief}</p>
+      <NavLink to = "/recipePage" onClick = {handleClick}> See Recipe</NavLink>
+
+
 
 
     {/* 
@@ -34,13 +37,17 @@ export default function RecipeCard({recipe}) {
 
 
 const CardWrapper = styled.div `
-display: flex;
+/* display: flex; */
 justify-content: center;
-margin: 0;
-display: flex;
+margin: 10px;
+padding: 5px;
+/* display: flex; */
+border: 5px solid;
+width: 700px;
+background-color: #EE6C4D;
 
 & img {
-max-height: 660px;
-max-width: 720px;
+max-height: 200px;
+/* max-width: 200px; */
 }
 `
