@@ -5,11 +5,11 @@ import RecipeContainer from "./components/RecipeContainer";
 import NavBar from "./components/NavBar";
 import RecipeForm from "./components/RecipeForm";
 import Favorites from "./components/Favorites";
-import RecipePage from "./components/RecipePage"
+import RecipePage from "./components/RecipePage";
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
-  const [selectedRecipe, setSelectedRecipe] = useState([])
+  const [selectedRecipe, setSelectedRecipe] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/recipes")
@@ -22,18 +22,20 @@ function App() {
       <Header />
       <NavBar />
       <Switch>
-
-      <Route path="/recipePage">
-          <RecipePage recipe = {selectedRecipe}/>
-        </Route>  
-      <Route path="/favorites">
+        <Route path="/recipePage">
+          <RecipePage recipe={selectedRecipe} />
+        </Route>
+        <Route path="/favorites">
           <Favorites />
         </Route>
         <Route path="/form">
           <RecipeForm />
         </Route>
         <Route path="/">
-          <RecipeContainer recipeList={recipeList} recipeSetter = {setSelectedRecipe} />
+          <RecipeContainer
+            recipeList={recipeList}
+            recipeSetter={setSelectedRecipe}
+          />
         </Route>
       </Switch>
     </div>
