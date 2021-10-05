@@ -22,7 +22,7 @@ function App() {
       <Header />
       <NavBar />
       <Switch>
-        <Route path="/recipePage">
+        <Route exact path="/recipe/:id">
           <RecipePage recipe={selectedRecipe} />
         </Route>
         <Route path="/favorites">
