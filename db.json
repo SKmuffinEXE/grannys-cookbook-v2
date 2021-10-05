@@ -1,0 +1,33 @@
+{
+    "recipes":[
+        {
+            "id": 1,
+            "name": "Stuffed Pork Tenderloin",
+            "image": "https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-Stuffed-pork-1305.jpg",
+            "brief": "Tasty and mouth watering pork Tenderloin at your fingertips",
+            "Rating": {"one": 0, "two": 0, "three": 0, "four": 0, "five": 4},
+            "Favorite": false,
+            "Ingredients": ["1 kg Pork loin roasting join", "175 kg Manchego cheese, finely sliced", "150 membrillo", "2 sage sprigs", "Olive oil", "1 head of garlic", "1 thyme sprig", "200ml medium-dry sherry", "freshly grounded sea salt pepper"],
+            "Recipe": ["Preheat Oven to 220 C", "Lay the joint, skin side down, on a chopping board and cut three-quarters of the way into the flesh lengthways from top to bottom. Open the meat out to form a long rectangle and season with salt and pepper.", "Arrange the slices of cheese and the membrillo along the centre of the meat. Scatter the leaves from 1 sage sprig on top, and roll the meat up to enclose the stuffing. Tie at 3cm intervals along the length of the meat with string. ", "Place the thyme and remaining sage in a hob-proof roasting tray with the garlic. Lay the pork on top, skin side up. Drizzle with olive oil and season generously with salt and pepper. ", "Transfer the roasting tray to the preheated oven and cook for 20 minutes until the skin is crispy and golden. Turn the oven down to 180°/Gas 4 and cook for a further 50 minutes until the pork is just cooked through. Remove the pork from the tin and set aside on a serving dish to rest. ", "Put the roasting tray on the hob. Pour in the sherry and bring to the boil, scraping up any bits stuck in the bottom of the tray. Lower the heat, squash the garlic and remove the herbs. Add any resting juices from the meat. ", "To serve, carve the pork into thick slices, strain the sauce and pour it over the meat."]
+        },
+        {
+            "id": 2,
+            "name": "Creamy Mushroom Toast with Soft Egg and Gruyere",
+            "image": "https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-Mushroomtoast.jpg",
+            "brief": "A fancy delicious appetizer to go with your meal",
+            "Rating": {"one": 0, "two": 0, "three": 0, "four": 0, "five": 3},
+            "Favorite": false,
+            "Ingredients": ["2 tablespoons unsalted butter, more as needed", "Olive Oil", "8 ounces mushrooms, ends trimmed and sliced into even pieces", "3 cloves garlic, smashed", "3 large sprigs of thyme", "½ shallot, finely minced, about 2 tablespoons", "Kosher salt", "Freshly ground black pepper", "Sherry vinegar", "3 tablespoons crème fraîche"],
+            "Recipe": ["Make the Mushrooms: Heat a large skillet over medium-high heat and melt butter. Once melted, add mushrooms (working in batches if needed to not overcrowd the pan), garlic and thyme and cook, tossing occasionally, until mushrooms are lightly browned and tender. If working in batches, remove mushrooms from skillet and set aside, keeping the garlic and thyme in the pan and add a bit more butter to the pan, and repeat with remaining mushrooms.", "Add shallots, season everything with salt and pepper, and saute for 1-2 minutes, until shallots are tender and fragrant. Discard garlic and thyme, then add a splash of sherry vinegar, crème fraîche then stir to combine. Reduce heat to medium low and let simmer all together for a moment. Taste and adjust seasoning before removing from heat. ", "Place a few generous spoonfuls of mushrooms and sauce on top of toasted bread, then top with arugula leaves. Nestle the eggs atop the greens and top with shaves of Gruyère."]  
+        },
+        {"id": 3,
+            "name": "Ham and Cheese Pockets",
+            "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Ham-and-Cheese-Pockets_EXPS_SDFM19_1092_C10_17_6b-5.jpg?fit=700,1024",
+            "brief": "A nice simple meal for the kids!",
+            "Rating": {"one": 3, "two": 2, "three": 0, "four": 0, "five": 1},
+            "Favorite": false,
+            "Ingredients": ["1 loaf (1 pound) frozen bread dough, thawed", "2-1/2 cups finely chopped fully cooked ham", "1 cup shredded Swiss cheese", "1 large egg yolk", "1 tablespoon water"],
+            "Recipe": ["Let dough rise according to package directions. Punch down; divide into 10 pieces. On a lightly floured surface, roll each piece into a 5-in. circle.", "Preheat oven to 375°. Place 1 circle on a greased baking sheet; top with about 1/4 cup ham and 2 tablespoons cheese to within 1/2 in. of edge. Press filling to flatten. Combine egg yolk and water; brush edges of dough. Fold dough over filling and pinch edges to seal. Repeat with remaining dough and filling. Brush tops with remaining egg yolk mixture.", "Bake until golden brown, 15-20 minutes. Serve warm or cold"]  
+        }
+    ]
+}
