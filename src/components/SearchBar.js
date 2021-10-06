@@ -1,15 +1,15 @@
 import React from "react";
-
-export default function SearchBar() {
+function Search({ setSearch }) {
   return (
     <div className="searchbar">
-      <label htmlFor="search">Search Recipe:</label>
+      <label htmlFor="search">Search Recipes:</label>
       <input
         type="text"
         id="search"
-        placeholder="Search for recipe..."
-        // onChange={(e) => setSearch(e.target.value)}
+        placeholder="Type recipe name to search..."
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );
 }
+export default Search;

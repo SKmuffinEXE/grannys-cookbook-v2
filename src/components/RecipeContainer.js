@@ -1,25 +1,22 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
-import styled from "styled-components"
+import styled from "styled-components";
 
-
-export default function RecipeContainer({recipeList, recipeSetter}) {
-
-  //displays ratings on 
-  function whatRating(ratings){}
-  
+export default function RecipeContainer({ recipeList }) {
+  //displays ratings on
+  // function whatRating(ratings) {}
 
   return (
     <layout>
-      {recipeList.map(recipe => <RecipeCard recipe = {recipe} key = {recipe.name} recipeSetter = {recipeSetter}/>
-    )}
+      {recipeList.map((recipe) => (
+        <RecipeCard recipe={recipe} key={recipe.name} />
+      ))}
     </layout>
   );
 }
 
 const layout = styled.div`
-justify-content: center;
-
-display: flex;
-`
-
+  display: flex;
+  justify-content: center;
+  flex-wrap: space-around;
+`;
