@@ -6,12 +6,14 @@ export default function RecipeForm() {
   const [image, setImage] = useState("");
   const [brief, setBrief] = useState("");
   const [cookTime, setCookTime] = useState("");
+
+  const [ingredient,setIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [steps, setSteps] = useState([]);
 
-  function handleIngredientsChange(changes) {
-    // setIngredients([...ingredients, changes])
-    console.log(changes)
+  function addIngredient() {
+    setIngredients([...ingredients, ingredient])
+    console.log(ingredients)
   }
 
   function handleStepsChange(changes){
@@ -27,15 +29,10 @@ export default function RecipeForm() {
       image: image,
       brief: brief,
       cookTime: cookTime,
-      Rating: {
-        one: 0,
-        two: 0,
-        three: 0,
-        four: 0,
-        five: 0,
-      },
+      Rating: {one: 0,two: 0,three: 0, four: 0,five:0},
       favorite: false,
     };
+    // console.log(newRecipe)
   }
 
   return (
@@ -91,44 +88,42 @@ export default function RecipeForm() {
           <br/>
           <br/>
 
-          <label>Ingredients </label> <label>Steps</label>  
+          <label>Ingredients </label> 
           <br/>
           <input
             type="text"
             name="ingredients"
             // step="0.01"
-            placeholder="How long will this take?"
-            // value={ingredients}
-            // onChange={(e) => handle IngredientsChange(e.target.value)}
+            placeholder="Ingredient"
+            value={ingredient}
+            onChange={(e) => setIngredient(e.target.value)}
           />
 
-            <input
-            type="text"
-            name="steps"
-            // step="0.01"
-            placeholder="How long will this take?"
-            // value={steps}
-            // onChange={(e) => setSteps(e.target.value)}
-          />
+        <label> Steps </label> 
           <br/>
-          <button> Add ingredient </button> <button> Add Step</button>
-          
-          
-          
-               <div>Current Ingredients  </div>
-        <ul><li> ingredients</li>
-        <li> step 1</li>
-        <li> step 1</li>
-        <li> step 1</li> </ul>
-         <div>Current Steps</div>
-         <li> step 1</li>
-         <li> step 1</li>
-         <li> step 1</li>
-         <li> step 1</li>
-         <li> step 1</li>
-         <li> step 1</li>
+          <input
+            type="text"
+            name="ingredients"
+            // step="0.01"
+            placeholder="Ingredient"
+            value={ingredient}
+            onChange={(e) => setIngredient(e.target.value)}
+          />
+          <br/> 
+          <button onClick = {addIngredient}> Add ingredient </button> <button> Add Step</button>
 
-         <button type = "submit"> Submit</button>
+
+          {/* ingredient list */}
+          <div>Ingredients:
+            {ingredients.map(newIngredient =>  <li key = {newIngredient}> {newIngredient} </li>)}
+            
+             </div>
+
+             {/* steps list */}
+             <div>Steps: 
+                </div>
+
+         <button type = "submit" onSubmit = {(e) => handleSubmit}> Submit</button>
         </form>
 
  
