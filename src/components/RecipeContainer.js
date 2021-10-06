@@ -2,21 +2,23 @@ import React from "react";
 import RecipeCard from "./RecipeCard";
 import styled from "styled-components";
 
-export default function RecipeContainer({ recipeList }) {
+export default function RecipeContainer({ recipeList, addFav, removeFav }) {
   //displays ratings on
   // function whatRating(ratings) {}
 
   return (
-    <layout>
+    <div>
+    <ContainerLayout>
       {recipeList.map((recipe) => (
-        <RecipeCard recipe={recipe} key={recipe.name} />
+        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav} />
       ))}
-    </layout>
+    </ContainerLayout>
+    </div>
   );
 }
 
-const layout = styled.div`
+const ContainerLayout = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: space-around;
+  flex-wrap: wrap;
 `;

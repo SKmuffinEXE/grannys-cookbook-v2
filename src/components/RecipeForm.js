@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState} from "react";
 import { useHistory } from "react-router-dom";
 
 export default function RecipeForm({ addRecipe }) {
@@ -34,7 +33,6 @@ export default function RecipeForm({ addRecipe }) {
     e.preventDefault();
 
     const newRecipe = {
-      id: uuidv4(),
       name: name,
       image: image,
       brief: brief,
@@ -67,7 +65,7 @@ export default function RecipeForm({ addRecipe }) {
             Name:
             <input
               type="text"
-              placeholder="Recipe Name"
+              // placeholder="Recipe Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -79,18 +77,19 @@ export default function RecipeForm({ addRecipe }) {
             Image:
             <input
               type="text"
-              placeholder="Insert image link here!"
+              placeholder="URL"
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
           </label>
+
           <br />
           <label>
             {" "}
             Brief explanation:
             <input
               type="text"
-              placeholder="A brief explanation for granny"
+              // placeholder="A brief explanation for granny"
               value={brief}
               onChange={(e) => setBrief(e.target.value)}
             />
@@ -100,7 +99,7 @@ export default function RecipeForm({ addRecipe }) {
             Time to make:
             <input
               type="text"
-              placeholder="How long will this take?"
+              // placeholder="How long will this take?"
               value={cookTime}
               onChange={(e) => setCookTime(e.target.value)}
             />
@@ -108,25 +107,28 @@ export default function RecipeForm({ addRecipe }) {
           <br />
           <br />
 
-          <label>Ingredients </label>
-          <br />
+          <label> Add New Ingredient  &nbsp;
+          {/* <br /> */}
           <input
             type="text"
-            placeholder="Ingredient"
+            // placeholder="Ingredient"
             value={ingredient}
             onChange={(e) => setIngredient(e.target.value)}
           />
+        </label>
+<button onClick={addIngredient}> Add ingredient    </button>
+<br />
 
-          <label> Steps </label>
-          <br />
+          <label> Add  New Step &nbsp;
+          
           <input
             type="text"
-            placeholder="steps"
+            // placeholder="steps"
             value={step}
             onChange={(e) => setStep(e.target.value)}
           />
-          <br />
-          <button onClick={addIngredient}> Add ingredient </button>
+          
+          </label>
 
           <button onClick={addStep}> Add Step</button>
 
@@ -137,6 +139,7 @@ export default function RecipeForm({ addRecipe }) {
               <li key={newIngredient}> {newIngredient} </li>
             ))}
           </div>
+          <br/>
 
           {/* steps list */}
           <div>
@@ -144,8 +147,9 @@ export default function RecipeForm({ addRecipe }) {
             {steps.map((newStep) => (
               <li key={newStep}> {newStep} </li>
             ))}
+            
           </div>
-
+          <br/>
           <button type="submit" onSubmit={(e) => handleSubmit}>
             {" "}
             Submit

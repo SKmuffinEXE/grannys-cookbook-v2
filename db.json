@@ -13,7 +13,7 @@
         "five": 3
       },
       "cookTime": "1:45",
-      "Favorite": false,
+      "Favorite": true,
       "Ingredients": [
         "2 tablespoons unsalted butter, more as needed",
         "Olive Oil",
@@ -60,33 +60,6 @@
       ]
     },
     {
-      "id": "ace57e0d-a2f6-4362-811b-6dede3adfa8f",
-      "name": "test",
-      "image": "https://ms.yugipedia.com//e/e3/TimeWizard-STP1-EN-SR-UE.png",
-      "brief": "asdf",
-      "cookTime": "asdf",
-      "Rating": {
-        "one": 0,
-        "two": 0,
-        "three": 0,
-        "four": 0,
-        "five": 0
-      },
-      "Favorite": false,
-      "Ingredients": [
-        "1",
-        "12",
-        "123",
-        "1234"
-      ],
-      "Instructions": [
-        "step 1",
-        "step 2",
-        "step 23",
-        "step 5"
-      ]
-    },
-    {
       "id": "33b95ab5-6829-4dba-9839-bf7829313ebf",
       "name": "Scottish Egg",
       "image": "https://3.bp.blogspot.com/-Xp-AdpwXL_0/VRofwfy7RdI/AAAAAAAARGM/_f5LshJOLtk/s1600/IMG_7526.JPG",
@@ -99,7 +72,7 @@
         "four": 0,
         "five": 0
       },
-      "Favorite": false,
+      "Favorite": true,
       "Ingredients": [
         "Eggs",
         "Italian Sausage",
@@ -122,11 +95,11 @@
       ]
     },
     {
-      "id": "255f390e-069f-40de-a3d8-eb8ba84da7ba",
-      "name": "asdf",
-      "image": "adsf",
-      "brief": "adsf",
-      "cookTime": "adf",
+      "id": "6340ba05-bf17-4338-9eed-a3350916259a",
+      "name": "Salmon Teriyaki",
+      "image": "https://v1.nitrocdn.com/KQYMGOLIdXGmoAcyJsPOrQDKktgCbwtG/assets/static/optimized/rev-7e8ca0b/wp-content/uploads/2019/10/Teriyaki-Salmon-3491-I-2.jpg",
+      "brief": "Delicious Salmon lathered in a custom teriyaki sauce",
+      "cookTime": "1 hour",
       "Rating": {
         "one": 0,
         "two": 0,
@@ -134,13 +107,55 @@
         "four": 0,
         "five": 0
       },
-      "Favorite": false,
+      "Favorite": true,
       "Ingredients": [
-        "adf"
+        "2 fillets skin-on salmon fillet",
+        "¼ tsp kosher/sea sa",
+        "⅛ tsp freshly ground black pepper",
+        "1 Tbsp all-purpose flour (plain flour) ",
+        "½ Tbsp neutral-flavored oil (vegetable, rice bran, canola, etc)",
+        "1 Tbsp unsalted butter",
+        "1 Tbsp sake",
+        "1 Tbsp sake(seasoning)",
+        "1 Tbsp mirin(seasoning)",
+        "1 Tbsp sugar(seasoning)",
+        "2 Tbsp soy sauce(seasoning)"
       ],
       "Instructions": [
-        "adf"
+        "mix all the seasonings together",
+        "Wash salmon and pat dry",
+        "Sprinkle flour on one side of salmon, spread evenly.  Flip and spread flour on the other side",
+        "n a frying pan, add the vegetable oil and melt the butter over medium heat. Don't burn the butter. If the frying pan gets too hot, reduce heat or remove it from the heat temporarily.",
+        "Add the salmon fillets, skin side on the bottom (this will be top when you serve). Cook the salmon for 3 minutes, or until the bottom side is nicely golden brown, and then flip.",
+        "Add sake and cover with a lid. Steam the salmon for 3 minutes, or until it's cooked through. Remove the salmon to a plate.",
+        "Add the seasonings to the pan and increase the heat a little bit. When the sauce starts to boil, add salmon back in the pan and spoon the sauce over the salmon.",
+        "When the sauce thickens, turn off the heat. Plate the salmon on a plate and serve immediately."
       ]
+    },
+    {
+      "name": "testing",
+      "image": "https://i.kym-cdn.com/entries/icons/facebook/000/019/649/OK_thumb.jpg",
+      "brief": "testing without uid",
+      "cookTime": "3 days",
+      "Rating": {
+        "one": 0,
+        "two": 0,
+        "three": 0,
+        "four": 0,
+        "five": 0
+      },
+      "Favorite": true,
+      "Ingredients": [
+        "code"
+      ],
+      "Instructions": [
+        "create template",
+        "make code work",
+        "make form",
+        "test form",
+        "delete this object"
+      ],
+      "id": 4
     }
   ]
 }
