@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function RecipePage({ deleteRecipe }) {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
   const [favorite, setFavorite] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     fetch(`http://localhost:3001/recipes/${id}`)
@@ -22,6 +24,7 @@ export default function RecipePage({ deleteRecipe }) {
 
   function handleDelete() {
     deleteRecipe(recipe.id);
+    history.push(`/`);
   }
 
   return (
