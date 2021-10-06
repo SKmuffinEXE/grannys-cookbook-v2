@@ -15,12 +15,14 @@ export default function RecipeForm({addRecipe}) {
 
   function addIngredient(e) {
     setIngredients([...ingredients, ingredient])
+    setIngredient("")
     e.preventDefault();
     // console.log(ingredients)
   }
 
   function addStep(e){
     setSteps([...steps, step])
+    setStep("")
     e.preventDefault();
     // console.log(steps)
   }
@@ -49,6 +51,13 @@ export default function RecipeForm({addRecipe}) {
   .then(r => r.json())
   .then(data => {
     addRecipe(data)
+    setName("")
+    setImage("")
+    setBrief("")
+    setCookTime("")
+
+    setSteps([])
+    setIngredients([])
   })
 
   }
