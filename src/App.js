@@ -9,7 +9,11 @@ import RecipePage from "./components/RecipePage";
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
-  const [selectedRecipe, setSelectedRecipe] = useState([]);
+  
+
+  function addRecipe(data) {
+    setRecipeList(prev =>[...prev, data])
+  }
 
   useEffect(() => {
     fetch("http://localhost:3001/recipes")
@@ -23,18 +27,18 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/recipe/:id">
-          <RecipePage recipe={selectedRecipe} />
+          <RecipePage  />
         </Route>
         <Route path="/favorites">
           <Favorites />
         </Route>
         <Route path="/form">
-          <RecipeForm />
+          <RecipeForm  addRecipe = {addRecipe}/>
         </Route>
         <Route path="/">
           <RecipeContainer
             recipeList={recipeList}
-            recipeSetter={setSelectedRecipe}
+            
           />
         </Route>
       </Switch>

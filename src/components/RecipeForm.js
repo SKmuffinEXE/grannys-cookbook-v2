@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {v4 as uuidv4} from 'uuid';
-export default function RecipeForm() {
+
+export default function RecipeForm({addRecipe}) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [brief, setBrief] = useState("");
@@ -12,13 +13,15 @@ export default function RecipeForm() {
   const [step, setStep] = useState("")
   const [steps, setSteps] = useState([]);
 
-  function addIngredient() {
+  function addIngredient(e) {
     setIngredients([...ingredients, ingredient])
+    e.preventDefault();
     // console.log(ingredients)
   }
 
-  function addStep(){
+  function addStep(e){
     setSteps([...steps, step])
+    e.preventDefault();
     // console.log(steps)
   }
 
@@ -33,9 +36,21 @@ export default function RecipeForm() {
       cookTime: cookTime,
       Rating: {one: 0,two: 0,three: 0, four: 0,five:0},
       Favorite: false,
-      Ingredients: [ingredients]
+      Ingredients: ingredients,
+      Instructions: steps
     };
-    console.log(newRecipe)
+    // addRecipe(newRecipe)
+
+    fetch('http://localhost:3001/recipes', {
+    method: 'POST',
+    headers: {"Content-Type": 'application/json'},
+    body: JSON.stringify(newRecipe)
+  })
+  .then(r => r.json())
+  .then(data => {
+    addRecipe(data)
+  })
+
   }
 
   return (
@@ -47,7 +62,6 @@ export default function RecipeForm() {
             Name: 
           <input
             type="text"
-            name="name"
             placeholder="Recipe Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -60,7 +74,6 @@ export default function RecipeForm() {
           
           <input
             type="text"
-            name="image"
             placeholder="Insert image link here!"
             value={image}
             onChange={(e) => setImage(e.target.value)}
@@ -71,8 +84,6 @@ export default function RecipeForm() {
           <label> Brief explanation:   
           <input
             type="text"
-            name="brief"
-            // step="0.01"
             placeholder="A brief explanation for granny"
             value={brief}
             onChange={(e) => setBrief(e.target.value)}
@@ -81,8 +92,6 @@ export default function RecipeForm() {
           <label> Time to make:  
           <input
             type="text"
-            name="time"
-            // step="0.01"
             placeholder="How long will this take?"
             value={cookTime}
             onChange={(e) => setCookTime(e.target.value)}
@@ -95,8 +104,6 @@ export default function RecipeForm() {
           <br/>
           <input
             type="text"
-            name="ingredients"
-            // step="0.01"
             placeholder="Ingredient"
             value={ingredient}
             onChange={(e) => setIngredient(e.target.value)}
@@ -106,8 +113,6 @@ export default function RecipeForm() {
           <br/>
           <input
             type="text"
-            name="steps"
-            // step="0.01"
             placeholder="steps"
             value={step}
             onChange={(e) => setStep(e.target.value)}

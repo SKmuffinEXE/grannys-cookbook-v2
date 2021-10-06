@@ -25,9 +25,11 @@ export default function RecipePage() {
     <div>
       <h1>{recipe.name}</h1>
       <img src = {recipe.image}/>
+      <h1>Ingredients </h1>
+      <ul> {recipe.Ingredients.map(ingredient => <li> {ingredient} </li>)}</ul>
 
-      <ul>Ingredients</ul>
-      <ul>Cooking Instructions</ul>
+      <h1>Cooking Instructions </h1>
+      <ol>{recipe.Instructions.map(step => <li> {step} </li>)}</ol>
       {/* <h3>comments</h3> */}
       
     </div>

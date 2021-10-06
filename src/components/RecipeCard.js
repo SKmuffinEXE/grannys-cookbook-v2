@@ -4,21 +4,22 @@ import { NavLink } from "react-router-dom";
 
 export default function RecipeCard({recipe, recipeSetter}) {
 
-  function handleClick(){
-    recipeSetter(recipe)
-    // console.log("AYY!")
-  }
-  // console.log(recipe)
+  // function handleClick(){
+  //   recipeSetter(recipe)
+  
+  // }
+
   return (
  
       <div>
             <CardWrapper>
       <h1> {recipe.name}</h1>
       <img src = {recipe.image} alt = {recipe.name}/>
+      <h3>Cooking time: {recipe.cookTime} </h3>
       <p> {recipe.brief}</p>
       {/* rating */}
       {/* favorite */}
-      <NavLink to = {`/recipe/${recipe.id}`} onClick = {handleClick}> See Recipe</NavLink>
+      <NavLink to = {`/recipe/${recipe.id}`}> See Recipe</NavLink>
 
 
     </CardWrapper> 
