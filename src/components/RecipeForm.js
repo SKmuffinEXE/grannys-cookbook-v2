@@ -9,15 +9,18 @@ export default function RecipeForm() {
 
   const [ingredient,setIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
+
+  const [step, setStep] = useState("")
   const [steps, setSteps] = useState([]);
 
   function addIngredient() {
     setIngredients([...ingredients, ingredient])
-    console.log(ingredients)
+    // console.log(ingredients)
   }
 
-  function handleStepsChange(changes){
-    setSteps([...steps, changes])
+  function addStep(){
+    setSteps([...steps, step])
+    // console.log(steps)
   }
 
   function handleSubmit(e) {
@@ -30,7 +33,8 @@ export default function RecipeForm() {
       brief: brief,
       cookTime: cookTime,
       Rating: {one: 0,two: 0,three: 0, four: 0,five:0},
-      favorite: false,
+      Favorite: false,
+      Ingredients: [ingredients]
     };
     // console.log(newRecipe)
   }
@@ -103,14 +107,16 @@ export default function RecipeForm() {
           <br/>
           <input
             type="text"
-            name="ingredients"
+            name="steps"
             // step="0.01"
-            placeholder="Ingredient"
-            value={ingredient}
-            onChange={(e) => setIngredient(e.target.value)}
+            placeholder="steps"
+            value={step}
+            onChange={(e) => setStep(e.target.value)}
           />
           <br/> 
-          <button onClick = {addIngredient}> Add ingredient </button> <button> Add Step</button>
+          <button onClick = {addIngredient}> Add ingredient </button>
+          
+           <button onClick = {addStep}> Add Step</button>
 
 
           {/* ingredient list */}
@@ -121,6 +127,7 @@ export default function RecipeForm() {
 
              {/* steps list */}
              <div>Steps: 
+               {steps.map(newStep => <li key = {newStep}> {newStep} </li>) }
                 </div>
 
          <button type = "submit" onSubmit = {(e) => handleSubmit}> Submit</button>
