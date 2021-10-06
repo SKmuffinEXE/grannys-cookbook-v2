@@ -23,8 +23,17 @@ export default function RecipePage({ deleteRecipe }) {
   }
 
   function handleDelete() {
-    deleteRecipe(recipe.id);
-    history.push(`/`);
+    fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then(() => {
+        deleteRecipe(recipe.id);
+        history.push(`/`);
+      });
   }
 
   return (
