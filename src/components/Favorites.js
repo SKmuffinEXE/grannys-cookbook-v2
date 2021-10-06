@@ -7,11 +7,11 @@ export default function Favorites({favList, addFav, removeFav}) {
 
   return (<div>
 
-    <center><h1> Your personal favorite granny dishes</h1> </center>
+    <center><h1> Your Personal Favorite Granny Dishes</h1> </center>
 
     <ContainerLayout>
       {favList.map((recipe) => (
-        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav} />
+        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav} favList = {favList} />
       ))}
     </ContainerLayout>
   </div>

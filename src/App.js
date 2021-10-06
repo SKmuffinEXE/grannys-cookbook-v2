@@ -67,7 +67,7 @@ function removeFromFav(deleteRecipeID){
           <RecipeForm addRecipe={addRecipe} />
         </Route>
         <Route path="/">
-          <RecipeContainer recipeList={displayedRecipes} addFav = {addToFav} removeFav ={removeFromFav} />
+          <RecipeContainer favList = {favList} recipeList={displayedRecipes} addFav = {addToFav} removeFav ={removeFromFav} />
         </Route>
       </Switch>
       

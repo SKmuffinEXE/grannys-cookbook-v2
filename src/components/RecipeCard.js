@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export default function RecipeCard({ recipe, addFav, removeFav}) {
+export default function RecipeCard({ recipe, addFav, removeFav, favList}) {
 
   const [favorite, setFavorite] = useState(recipe.Favorite);
 

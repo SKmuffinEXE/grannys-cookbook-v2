@@ -45,7 +45,7 @@
         "five": 1
       },
       "cookTime": "1:45",
-      "Favorite": false,
+      "Favorite": true,
       "Ingredients": [
         "1 loaf (1 pound) frozen bread dough, thawed",
         "2-1/2 cups finely chopped fully cooked ham",
@@ -72,7 +72,7 @@
         "four": 0,
         "five": 0
       },
-      "Favorite": true,
+      "Favorite": false,
       "Ingredients": [
         "Eggs",
         "Italian Sausage",
@@ -144,7 +144,7 @@
         "four": 0,
         "five": 0
       },
-      "Favorite": true,
+      "Favorite": false,
       "Ingredients": [
         "code"
       ],

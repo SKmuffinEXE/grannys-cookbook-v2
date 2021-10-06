@@ -2,7 +2,7 @@ import React from "react";
 import RecipeCard from "./RecipeCard";
 import styled from "styled-components";
 
-export default function RecipeContainer({ recipeList, addFav, removeFav }) {
+export default function RecipeContainer({ recipeList, addFav, removeFav, favList }) {
   //displays ratings on
   // function whatRating(ratings) {}
 
@@ -10,7 +10,7 @@ export default function RecipeContainer({ recipeList, addFav, removeFav }) {
     <div>
     <ContainerLayout>
       {recipeList.map((recipe) => (
-        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav} />
+        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav}  favList = {favList}/>
       ))}
     </ContainerLayout>
     </div>

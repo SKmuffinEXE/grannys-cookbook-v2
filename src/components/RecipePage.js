@@ -34,16 +34,14 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
     .then((resp) => resp.json())
     .then(() => { 
 
-      if(favorite === false){
-        addFav(recipe)
-      }
-      else{
-        removeFav(recipe.id)
-      }
-
-     })
-    
-    
+      // if(favorite === false){
+      //   addFav(recipe)
+      // }
+      // else{
+      //   removeFav(recipe.id)
+      // }
+      
+     })    
   }
 
   function handleDelete() {
@@ -62,10 +60,11 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
 
   return (
     <div>
+      <center> 
       <CardWrapper>
       <h1>{recipe.name}</h1>
       <img src={recipe.image} alt = {recipe.name}/>
-      </CardWrapper>
+      
       <h1>Ingredients </h1>
       <ul>
         {recipe.Ingredients.map((ingredient) => (
@@ -82,17 +81,55 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
         {favorite ? "⭐" : "☆"}
       </button>
       <button onClick={handleDelete}> 🗑️ </button>
-
+      <br/> 
+      </CardWrapper>
+      <br/> <br/>
+      </center>
     </div>
   );
 }
 
 const CardWrapper = styled.div`
-/* display: flex; */
+justify-content: center;
 text-align: center;
+width: 1100px;
+background-color: #3D5A80;
+color: white;
+box-shadow: 4px 6px 15px -3px rgba(0,0,0,0.65);
 
 & img {
   max-width: 1000px;
 }
+
+& ul {
+  text-align: center;
+  list-style: inside;
+}
+
+& ol{
+  /* text-align: center; */
+  /* list-style: url('/media/examples/rocket.svg'); */
+  max-width: 1000px;
+}
+
+& button {
+  font-size: 30px;
+    width: 60px;
+    background-color: #98C1D9;
+    /* display: flex; */
+    /* justify-content: center; */
+    cursor: pointer;
+}
+
+& button:hover {
+    transform: translateY(-3px);
+  box-shadow: 4px 6px 15px -3px rgba(0,0,0,0.65);
+  text-decoration: none;
+  }
+
+  & button:active {
+    transform: translateY(-1px);
+  box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.65);
+  }
 
 `
