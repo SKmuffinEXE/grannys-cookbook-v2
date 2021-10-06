@@ -16,7 +16,8 @@ function App() {
   }
 
   function deleteRecipe(data) {
-    console.log("activated yo!");
+    const displayedList = recipeList.filter((recipe) => recipe.id !== data);
+    setRecipeList(displayedList);
   }
 
   useEffect(() => {
