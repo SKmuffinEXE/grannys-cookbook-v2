@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import uuidv4 from 'uuid/v4'
-
+import {v4 as uuidv4} from 'uuid';
 export default function RecipeForm() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -27,7 +26,7 @@ export default function RecipeForm() {
     e.preventDefault();
 
     const newRecipe = {
-      id: Date.now().toString(),
+      id: uuidv4(),
       name: name,
       image: image,
       brief: brief,
@@ -36,7 +35,7 @@ export default function RecipeForm() {
       Favorite: false,
       Ingredients: [ingredients]
     };
-    // console.log(newRecipe)
+    console.log(newRecipe)
   }
 
   return (
