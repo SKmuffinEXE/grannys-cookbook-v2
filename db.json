@@ -13,7 +13,7 @@
         "five": 3
       },
       "cookTime": "1:45",
-      "Favorite": false,
+      "Favorite": true,
       "Ingredients": [
         "2 tablespoons unsalted butter, more as needed",
         "Olive Oil",
@@ -72,7 +72,7 @@
         "four": 0,
         "five": 0
       },
-      "Favorite": true,
+      "Favorite": false,
       "Ingredients": [
         "Eggs",
         "Italian Sausage",
@@ -145,9 +145,7 @@
         "five": 0
       },
       "Favorite": false,
-      "Ingredients": [
-        "code"
-      ],
+      "Ingredients": ["code"],
       "Instructions": [
         "create template",
         "make code work",
@@ -156,6 +154,18 @@
         "delete this object"
       ],
       "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2"
     }
   ]
 }

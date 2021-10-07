@@ -12,7 +12,6 @@ function App() {
   const [recipeList, setRecipeList] = useState([]);
   const [searchTerm, setSearch] = useState("");
 
-
   //fetch functions
   function addRecipe(data) {
     setRecipeList((prev) => [...prev, data]);
@@ -27,20 +26,28 @@ function App() {
     fetch("http://localhost:3001/recipes")
       .then((r) => r.json())
       .then((recipes) => {
-        setRecipeList(recipes)
+        setRecipeList(recipes);
       });
   }, []);
 
-//favorite functions here
-function addToFav(favRes){
-  setRecipeList(recipeList.map(data => data.id === favRes ? {...data, Favorite: true} : data))
-}
+  //favorite functions here
+  function addToFav(favRes) {
+    setRecipeList(
+      recipeList.map((data) =>
+        data.id === favRes ? { ...data, Favorite: true } : data
+      )
+    );
+  }
 
-function removeFromFav(favRes){
-  setRecipeList(recipeList.map(data => data.id === favRes ? {...data, Favorite: false} : data))
-}
+  function removeFromFav(favRes) {
+    setRecipeList(
+      recipeList.map((data) =>
+        data.id === favRes ? { ...data, Favorite: false } : data
+      )
+    );
+  }
 
-//display object here
+  //display object here
   const displayedRecipes = recipeList.filter((recipeObj) =>
     recipeObj.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
   );
@@ -48,25 +55,36 @@ function removeFromFav(favRes){
   return (
     <div>
       <ContainerLayout>
-      <Header setSearch={setSearch} />
+        <Header setSearch={setSearch} />
       </ContainerLayout>
-      <br/>
+      <br />
       <NavBar />
       <Switch>
         <Route exact path="/recipe/:id">
-          <RecipePage deleteRecipe={deleteRecipe} addFav = {addToFav} removeFav ={removeFromFav} />
+          <RecipePage
+            deleteRecipe={deleteRecipe}
+            addFav={addToFav}
+            removeFav={removeFromFav}
+          />
         </Route>
         <Route path="/favorites">
-          <Favorites recipeList = {recipeList}/>
+          <Favorites
+            recipeList={recipeList}
+            addFav={addToFav}
+            removeFav={removeFromFav}
+          />
         </Route>
         <Route path="/form">
           <RecipeForm addRecipe={addRecipe} />
         </Route>
         <Route path="/">
-          <RecipeContainer recipeList={displayedRecipes} addFav = {addToFav} removeFav ={removeFromFav} />
+          <RecipeContainer
+            recipeList={displayedRecipes}
+            addFav={addToFav}
+            removeFav={removeFromFav}
+          />
         </Route>
       </Switch>
-      
     </div>
   );
 }
