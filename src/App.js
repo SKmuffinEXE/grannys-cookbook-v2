@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import RecipeForm from "./components/RecipeForm";
 import Favorites from "./components/Favorites";
 import RecipePage from "./components/RecipePage";
+import UserLogin from "./components/UserLogin";
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
@@ -66,6 +67,9 @@ function App() {
             addFav={addToFav}
             removeFav={removeFromFav}
           />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin />
         </Route>
         <Route path="/favorites">
           <Favorites

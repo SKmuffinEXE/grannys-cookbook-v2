@@ -9,6 +9,7 @@ export default function NavBar() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
         <NavLink to="/form">New Recipe</NavLink>
+        <NavLink to="/userlogin">User Login</NavLink>
       </NavContainer>
     </div>
   );
