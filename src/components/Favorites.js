@@ -16,7 +16,9 @@ export default function Favorites({ recipeList, addFav, removeFav}) {
       //   console.log(recipe)
       return <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav}/>
     
-    }    
+    }   else {
+      return null
+    } 
       })}
     </ContainerLayout>
   </div>

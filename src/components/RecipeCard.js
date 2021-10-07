@@ -8,7 +8,7 @@ export default function RecipeCard({ recipe, addFav, removeFav }) {
   function handleClick() {
     setFavorite(!favorite);
     //fetch here
-    fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+    fetch(`https://grannycb2.herokuapp.com/recipes/${recipe.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

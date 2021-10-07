@@ -1,0 +1,5 @@
+/			/
+/recipe			/recipe
+/userlogin		/userlogin
+/favorites		/favorites
+/form			/addRecipe

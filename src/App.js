@@ -26,7 +26,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3001/recipes")
+    fetch("https://grannycb2.herokuapp.com/recipes")
       .then((r) => r.json())
       .then((recipes) => {
         setRecipeList(recipes);

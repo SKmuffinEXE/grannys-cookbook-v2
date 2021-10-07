@@ -7,7 +7,7 @@ export default function UserLogin() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3001/users")
+    fetch("https://grannycb2.herokuapp.com/users")
       .then((r) => r.json())
       .then((data) => {
         const usernameChecker = data.filter((userObj) =>

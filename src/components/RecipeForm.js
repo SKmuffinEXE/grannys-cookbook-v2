@@ -44,7 +44,7 @@ export default function RecipeForm({ addRecipe }) {
     };
     // addRecipe(newRecipe)
 
-    fetch("http://localhost:3001/recipes", {
+    fetch("https://grannycb2.herokuapp.com/recipes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newRecipe),

@@ -10,7 +10,7 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/recipes/${id}`)
+    fetch(`https://grannycb2.herokuapp.com/recipes/${id}`)
       .then((r) => r.json())
       .then((data) => {setRecipe(data)
       setFavorite(data.Favorite)
@@ -42,7 +42,7 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
      })}
 
   function handleDelete() {
-    fetch(`http://localhost:3001/recipes/${recipe.id}`, {
+    fetch(`https://grannycb2.herokuapp.com/recipes/${recipe.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
