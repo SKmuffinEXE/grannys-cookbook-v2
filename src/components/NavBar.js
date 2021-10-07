@@ -21,7 +21,7 @@ const NavContainer = styled.div`
   padding: 0px 50px;
   justify-content: center;
   flex-wrap: wrap;
-
+  /*  */
   & a {
     display: inline-block;
     border-radius: 30px;

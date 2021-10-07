@@ -10,7 +10,16 @@ export default function UserLogin() {
     fetch("http://localhost:3001/users")
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
+        const usernameChecker = data.filter((userObj) =>
+          userObj.username.includes(user)
+        );
+        console.log(usernameChecker[0].password);
+
+        if (usernameChecker[0].password === password) {
+          console.log("You are logged in bro!");
+        } else {
+          console.log("Incorrect Password duuude!");
+        }
       });
   }
 
