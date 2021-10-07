@@ -33,16 +33,13 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
     })
     .then((resp) => resp.json())
     .then(() => { 
-
-      // if(favorite === false){
-      //   addFav(recipe)
-      // }
-      // else{
-      //   removeFav(recipe.id)
-      // }
-      
-     })    
-  }
+      if(favorite === false){
+        addFav(recipe.id)
+      }
+      else{
+        removeFav(recipe.id)
+      }
+     })}
 
   function handleDelete() {
     fetch(`http://localhost:3001/recipes/${recipe.id}`, {

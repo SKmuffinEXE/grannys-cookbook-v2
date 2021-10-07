@@ -3,16 +3,21 @@ import RecipeCard from "./RecipeCard";
 import styled from "styled-components";
 
 
-export default function Favorites({favList, addFav, removeFav}) {
+export default function Favorites({ recipeList, addFav, removeFav}) {
 
   return (<div>
 
     <center><h1> Your Personal Favorite Granny Dishes</h1> </center>
 
     <ContainerLayout>
-      {favList.map((recipe) => (
-        <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav} favList = {favList} />
-      ))}
+      {recipeList.map((recipe) => {
+        
+      if(recipe.Favorite === true)  {
+      //   console.log(recipe)
+      return <RecipeCard recipe={recipe} key={recipe.name} addFav = {addFav} removeFav = {removeFav}/>
+    
+    }    
+      })}
     </ContainerLayout>
   </div>
   );

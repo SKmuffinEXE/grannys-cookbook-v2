@@ -12,8 +12,6 @@ function App() {
   const [recipeList, setRecipeList] = useState([]);
   const [searchTerm, setSearch] = useState("");
 
-  const [favList, setFavList] = useState([])
-
 
   //fetch functions
   function addRecipe(data) {
@@ -30,18 +28,16 @@ function App() {
       .then((r) => r.json())
       .then((recipes) => {
         setRecipeList(recipes)
-        setFavList(recipes.filter(rec => rec.Favorite === true))
       });
   }, []);
 
 //favorite functions here
-function addToFav(newRecipe){
-  setFavList(prev => [...prev, newRecipe])
+function addToFav(favRes){
+  setRecipeList(recipeList.map(data => data.id === favRes ? {...data, Favorite: true} : data))
 }
 
-function removeFromFav(deleteRecipeID){
-  const removeFav = favList.filter(favRecipe => favRecipe.id !== deleteRecipeID)
-  setFavList(removeFav)
+function removeFromFav(favRes){
+  setRecipeList(recipeList.map(data => data.id === favRes ? {...data, Favorite: false} : data))
 }
 
 //display object here
@@ -58,16 +54,16 @@ function removeFromFav(deleteRecipeID){
       <NavBar />
       <Switch>
         <Route exact path="/recipe/:id">
-          <RecipePage deleteRecipe={deleteRecipe} />
+          <RecipePage deleteRecipe={deleteRecipe} addFav = {addToFav} removeFav ={removeFromFav} />
         </Route>
         <Route path="/favorites">
-          <Favorites favList = {favList}  addFav = {addToFav} removeFav ={removeFromFav}/>
+          <Favorites recipeList = {recipeList}/>
         </Route>
         <Route path="/form">
           <RecipeForm addRecipe={addRecipe} />
         </Route>
         <Route path="/">
-          <RecipeContainer favList = {favList} recipeList={displayedRecipes} addFav = {addToFav} removeFav ={removeFromFav} />
+          <RecipeContainer recipeList={displayedRecipes} addFav = {addToFav} removeFav ={removeFromFav} />
         </Route>
       </Switch>
       

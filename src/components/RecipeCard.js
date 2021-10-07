@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export default function RecipeCard({ recipe, addFav, removeFav, favList}) {
+export default function RecipeCard({ recipe, addFav, removeFav}) {
 
   const [favorite, setFavorite] = useState(recipe.Favorite);
 
@@ -20,18 +20,13 @@ export default function RecipeCard({ recipe, addFav, removeFav, favList}) {
     })
     .then((resp) => resp.json())
     .then(() => { 
-
       if(favorite === false){
-        addFav(recipe)
+        addFav(recipe.id)
       }
       else{
         removeFav(recipe.id)
       }
-
-     })
-    
-    
-  }
+     })}
 
   return (
     <div>
