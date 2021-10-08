@@ -8,7 +8,7 @@ import RecipeForm from "./components/RecipeForm";
 import Favorites from "./components/Favorites";
 import RecipePage from "./components/RecipePage";
 import UserLogin from "./components/UserLogin";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
@@ -91,7 +91,7 @@ function App() {
           />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
