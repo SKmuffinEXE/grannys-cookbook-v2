@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import RecipeForm from "./components/RecipeForm";
 import Favorites from "./components/Favorites";
 import RecipePage from "./components/RecipePage";
-import UserLogin from "./components/UserLogin";
+// import UserLogin from "./components/UserLogin";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -70,9 +70,9 @@ function App() {
             removeFav={removeFromFav}
           />
         </Route>
-        <Route path="/userlogin">
+        {/* <Route path="/userlogin">
           <UserLogin />
-        </Route>
+        </Route> */}
         <Route path="/favorites">
           <Favorites
             recipeList={recipeList}
