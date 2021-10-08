@@ -58,10 +58,13 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
   return (
     <div>
       <center> 
+        <FullWrap>
       <CardWrapper>
       <h1>{recipe.name}</h1>
       <img src={recipe.image} alt = {recipe.name}/>
-      
+
+      </CardWrapper>
+      <InstructionsWrapper>
       <h1>Ingredients </h1>
       <ul>
         {recipe.Ingredients.map((ingredient) => (
@@ -73,15 +76,14 @@ export default function RecipePage({ deleteRecipe, addFav, removeFav }) {
         {recipe.Instructions.map((step) => (
           <li> {step} </li>))}
       </ol>
-      {/* <h3>comments</h3> */}
       <button onClick={handleClick} className="primary">
         {favorite ? "⭐" : "☆"}
       </button>
       <button onClick={handleDelete}> 🗑️ </button>
-      <br/> 
-      </CardWrapper>
-      <br/> <br/>
+      </InstructionsWrapper>
+      </FullWrap>
       </center>
+      <br/> <br/>
     </div>
   );
 }
@@ -90,31 +92,19 @@ const CardWrapper = styled.div`
 justify-content: center;
 text-align: center;
 width: 1100px;
-background-color: #3D5A80;
+/* background-color: #3D5A80; */
 color: white;
-box-shadow: 4px 6px 15px -3px rgba(0,0,0,0.65);
+
 
 & img {
   max-width: 1000px;
 }
 
-& ul {
-  text-align: center;
-  list-style: inside;
-}
-
-& ol{
-  /* text-align: center; */
-  /* list-style: url('/media/examples/rocket.svg'); */
-  max-width: 1000px;
-}
 
 & button {
   font-size: 30px;
     width: 60px;
     background-color: #98C1D9;
-    /* display: flex; */
-    /* justify-content: center; */
     cursor: pointer;
 }
 
@@ -129,4 +119,18 @@ box-shadow: 4px 6px 15px -3px rgba(0,0,0,0.65);
   box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.65);
   }
 
+`
+
+const InstructionsWrapper = styled.div`
+justify-content: center;
+text-align: left;
+width: 1100px;
+color: white;
+`
+
+const FullWrap = styled.div`
+width: 1100px;
+background-color: #3D5A80;
+box-shadow: 4px 6px 15px -3px rgba(0,0,0,0.65);
+padding: 0px 0px 20px 30px;
 `
